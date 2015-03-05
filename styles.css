@@ -1,0 +1,60 @@
+/*fonts*/
+body{
+  font-family: 'Roboto', Arial;
+  font-weight: 400;
+}
+
+/*toolbar*/
+core-toolbar{
+  background-color: #03A9F4;
+  color: white;
+}
+h1{
+  font-size: 30px;
+  font-weight: 300;
+}
+.toolbar{
+  color: white;
+  /*width: 40px;
+  height: 40px;*/
+}
+
+/*fab*/
+paper-fab{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background-color: #03A9F4;
+}
+
+/*collapse*/
+#addinterface{
+  background-color: #03A9F4;
+  margin-top: -17px;
+}
+#centeradd{
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+#dropdowncontainer{
+  display: inline-block;
+}
+#inputcontainer{
+  display: inline-block;
+  padding-bottom: 1px;
+  margin-left: 30px;
+  margin-right: 0;
+}
+#buttoncontainer{
+  display: inline-block;
+  color: white;
+  padding-bottom: 5px;
+}
+
+/*tasks*/
+#tasks paper-input-decorator{
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}

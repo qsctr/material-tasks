@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <!--meta stuff-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!--web components polyfills-->
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+
+    <!--polymer element imports-->
+    <link rel="import" href="imports.html">
+
+    <!--css-->
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+  <body fullbleed unresolved layout vertical>
+    <core-header-panel flex mode="seamed" id="chp">
+
+      <!--toolbar-->
+      <core-toolbar>
+        <h1 id="bigheader">
+          Material Tasks
+        </h1>
+        <div flex></div>
+        <core-icon icon="add" class="toolbar" id="addone"></core-icon>
+      </core-toolbar>
+
+      <!--add-->
+      <core-collapse id="collapse" allowOverflow>
+        <div id="addinterface">
+          <div id="centeradd" horizontal layout>
+            <div id="dropdowncontainer" self-end>
+              <paper-dropdown-menu label="Choose project">
+                <paper-dropdown class="dropdown">
+                  <core-menu class="menu" valueattr="label" id="projectchooser">
+                    <paper-item label="P1">Project 1</paper-item>
+                    <paper-item label="history">Project 2</paper-item>
+                    <paper-item label="science">Project 3</paper-item>
+                    <paper-item label="spanish">Project 4</paper-item>
+                    <paper-item label="scientific research">Project 5</paper-item>
+                    <paper-item label="english">Project 6</paper-item>
+                    <paper-item label="math">Project 7</paper-item>
+                  </core-menu>
+                </paper-dropdown>
+              </paper-dropdown-menu>
+            </div>
+            <div id="inputcontainer" flex self-end>
+              <paper-input-decorator label="New Task">
+                <input is="core-input" id="addbox" type="text">
+              </paper-input-decorator>
+            </div>
+            <div id="buttoncontainer" self-end>
+              <paper-button id="okbutton">
+                OK
+              </paper-button>
+            </div>
+          </div>
+        </div>
+      </core-collapse>
+
+      <!--tasks-->
+      <div id="tasks">
+        <paper-input-decorator floatingLabel label="Project 1">
+          <input is="core-input" id="P1" type="text">
+        </paper-input-decorator>
+        <paper-input-decorator floatingLabel label="Project 2">
+          <input is="core-input" id="P2" type="text">
+        </paper-input-decorator>
+        <paper-input-decorator floatingLabel label="Project 3">
+          <input is="core-input" id="P3" type="text">
+        </paper-input-decorator>
+        <paper-input-decorator floatingLabel label="Project 4">
+          <input is="core-input" id="P4" type="text">
+        </paper-input-decorator>
+      </div>
+
+      <!--<div style="height: 1000px; background-color: red; width: 50px;">-->
+
+      </div>
+
+      <!--fab-->
+      <paper-fab icon="av:playlist-add" id="coreadd"></paper-fab>
+
+    </core-header-panel>
+
+    <!--script-->
+    <script src="script.js"></script>
+
+  </body>
+</html>
+
+
+
+<!--the 100th line!-->
