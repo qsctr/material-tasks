@@ -1,8 +1,9 @@
 # material-tasks
+
 An unfinished, still-in-progress material design Polymer tasks web-app.
 
-To add tasks, click the + button in the toolbar. Do not use the FAB. I know it
-is confusing (fab is supposed to be important) but the fab does not work for now.
+To add tasks, click the + button in the toolbar. Do not use the FAB. It is
+confusing (fab is supposed to be important) but the fab does not work for now.
 
 Each task should have a project. In the add toolbar choose the project before
 pressing OK, or else it will not work. Pressing enter will not work too, you
@@ -36,4 +37,4 @@ Here are the things that do not work:
 
 - deleting tasks / marking as done
 
-- changing project of existing tasks
+- changing project of an existing task
