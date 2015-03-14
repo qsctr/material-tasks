@@ -58,3 +58,17 @@ paper-fab{
   margin-left: auto;
   margin-right: auto;
 }
+.taskbox{
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  height: 60px;
+}
+#tasks paper-checkbox{
+  margin-right: 20px;
+  margin-bottom: 2px;
+}
+
+
+
+

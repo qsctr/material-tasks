@@ -49,22 +49,32 @@ window.addEventListener("polymer-ready", function(){
   var oldtotal = localStorage.getItem("total");
   var count2 = 0;
   while(count2 < oldtotal){
-    var oldnote = localStorage.getItem(count2);
+    var oldvalue = localStorage.getItem(count2);
 
     var countproject2 = count2 + "project";
     var oldproject = localStorage.getItem(countproject2)
 
     //add to task list
-    var adder = document.createElement("paper-input-decorator");
-    adder.setAttribute("floatingLabel", "");
-    adder.setAttribute("label", oldproject);
-    var adder2 = document.createElement("input");
-    adder2.setAttribute("is", "core-input");
-    adder2.setAttribute("type", "text");
-    adder2.value = oldnote;
-    adder2.className = oldproject;
-    adder.appendChild(adder2);
-    document.getElementById("tasks").appendChild(adder);
+    var adddiv = document.createElement("div");
+    adddiv.setAttribute("horizontal", "");
+    adddiv.setAttribute("layout", "");
+    adddiv.className = "taskbox";
+    var addcheck = document.createElement("paper-checkbox");
+    addcheck.setAttribute("self-end", "");
+    var adddecor = document.createElement("paper-input-decorator");
+    adddecor.setAttribute("floatingLabel", "");
+    adddecor.setAttribute("label", oldproject);
+    adddecor.setAttribute("flex", "");
+    adddecor.setAttribute("self-start", "");
+    var addinput = document.createElement("input");
+    addinput.setAttribute("is", "core-input");
+    addinput.setAttribute("type", "text");
+    addinput.className = oldproject;
+    addinput.value = oldvalue;
+    adddecor.appendChild(addinput);
+    adddiv.appendChild(addcheck);
+    adddiv.appendChild(adddecor);
+    document.getElementById("tasks").appendChild(adddiv);
 
     count2++
   }
@@ -98,22 +108,33 @@ window.addEventListener("polymer-ready", function(){
 
   //when ok button is clicked, add new task and clear input
   document.getElementById("okbutton").addEventListener("click", function(){
+    //get values of project and task
     var newvalue = document.getElementById("addbox").value;
     var newproject1 = document.getElementById("collapse").getElementsByClassName("core-selected");
     var newproject2 = newproject1[0].innerHTML;
 
     //add to task list
-    var adder = document.createElement("paper-input-decorator");
-    adder.setAttribute("floatingLabel", "");
-    adder.setAttribute("label", newproject2);
-    var adder2 = document.createElement("input");
-    adder2.setAttribute("is", "core-input");
-    adder2.setAttribute("type", "text");
-    adder2.value = newvalue;
-    adder2.className = newproject2;
-    adder.appendChild(adder2);
+    var adddiv = document.createElement("div");
+    adddiv.setAttribute("horizontal", "");
+    adddiv.setAttribute("layout", "");
+    adddiv.className = "taskbox";
+    var addcheck = document.createElement("paper-checkbox");
+    addcheck.setAttribute("self-end", "");
+    var adddecor = document.createElement("paper-input-decorator");
+    adddecor.setAttribute("floatingLabel", "");
+    adddecor.setAttribute("label", newproject2);
+    adddecor.setAttribute("flex", "");
+    adddecor.setAttribute("self-start", "");
+    var addinput = document.createElement("input");
+    addinput.setAttribute("is", "core-input");
+    addinput.setAttribute("type", "text");
+    addinput.className = newproject2;
+    addinput.value = newvalue;
+    adddecor.appendChild(addinput);
+    adddiv.appendChild(addcheck);
+    adddiv.appendChild(adddecor);
     var tasks = document.getElementById("tasks");
-    tasks.insertBefore(adder, tasks.childNodes[0]);
+    tasks.insertBefore(adddiv, tasks.childNodes[0]);
 
     //reset dropdown and input
     document.getElementById("projectchooser").setAttribute("selected", "0");
