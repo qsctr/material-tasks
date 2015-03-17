@@ -13,6 +13,22 @@ var addprocess = function(project){
     }
 }
 
+//function for showing adding menus and hiding tabs
+var showadd = function(){
+  document.getElementById("toptabs").style.display = "none";
+  document.getElementById("cmcontainer").style.display = "inline-block";
+  document.getElementById("addboxdeco").style.display = "inline-block";
+  document.getElementById("okbutton").style.display = "inline-block";
+}
+
+//show tabs and hide adding menus
+var hideadd = function(){
+  document.getElementById("toptabs").style.display = "inline-block";
+  document.getElementById("cmcontainer").style.display = "none";
+  document.getElementById("addboxdeco").style.display = "none";
+  document.getElementById("okbutton").style.display = "none";
+}
+
 //function for saving tasks
 var save = function(){
   var total = document.getElementById("tasks").getElementsByTagName("input").length;
@@ -44,6 +60,8 @@ var save = function(){
 
 //wait for page and polymer to load
 window.addEventListener("polymer-ready", function(){
+  //show tabs only
+  hideadd();
 
   //retrive old tasks from local storage
   var oldtotal = localStorage.getItem("total");
@@ -90,15 +108,16 @@ window.addEventListener("polymer-ready", function(){
   //when addone button is clicked, toggle the collapse and other stuff
   var open = 1;
   document.getElementById("addone").addEventListener("click", function(){
-    document.getElementById("collapse").toggle();
     open++
     if(open % 2 === 0){ //if action is open//
       document.getElementById("bigheader").innerHTML = "Add new task";
       document.getElementById("addone").setAttribute("icon", "clear");
+      showadd();
     }
     else{ //if action is close//
       document.getElementById("bigheader").innerHTML = "Material Tasks";
       document.getElementById("addone").setAttribute("icon", "add");
+      hideadd();
       //reset dropdown and input
       document.getElementById("projectchooser").setAttribute("selected", "0")
       document.getElementById("projectchooser").setAttribute("selected", "null");
@@ -110,7 +129,7 @@ window.addEventListener("polymer-ready", function(){
   document.getElementById("okbutton").addEventListener("click", function(){
     //get values of project and task
     var newvalue = document.getElementById("addbox").value;
-    var newproject1 = document.getElementById("collapse").getElementsByClassName("core-selected");
+    var newproject1 = document.getElementById("projectchooser").getElementsByClassName("core-selected");
     var newproject2 = newproject1[0].innerHTML;
 
     //add to task list

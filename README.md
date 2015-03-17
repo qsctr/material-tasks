@@ -2,12 +2,13 @@
 
 An unfinished, work in progress material design Polymer tasks web-app.
 
-To add tasks, click the + button in the toolbar. Do not use the FAB. It is
-confusing (fab is supposed to be important) but the fab does not work for now.
+To add tasks, click the + button in the toolbar. Do not use the FAB. The FAB
+does not work. Also the FAB doesn't even appear in my desktop browser, but it
+appears on my phone.
 
 Each task should have a project. In the add toolbar choose the project before
-pressing OK, or else it will not work. Pressing enter will not work too, you
-have to press OK.
+pressing done, or else it will not work. Pressing enter will not work too, you
+have to press done.
 
 The tasks will be saved automatically, and when you open the page again all the
 tasks will be there. The website uses HTML local storage to save tasks.

@@ -1,7 +1,7 @@
 ##todo list
 - Press enter in toolbar input to add task
 - Make checkboxes complete task when checked
-- Make 2 tabs: Tasks and Completed
+- Make tabs work
 - Delete tasks
-- Put adding controls in toolbar, not collapse
+- Add animation for transition from tabs to new task
 - Update Polymer

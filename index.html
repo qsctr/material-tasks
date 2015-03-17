@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="styles.css">
 
     <!--favicon-->
-    <link rel="icon" href="favicon.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
 
     <title>
       Material Tasks
@@ -30,52 +30,48 @@
     <core-header-panel flex mode="seamed" id="chp">
 
       <!--toolbar-->
-      <core-toolbar>
+      <core-toolbar class="medium-tall">
         <h1 id="bigheader">
           Material Tasks
         </h1>
         <div flex></div>
         <paper-icon-button icon="add" class="toolbar" id="addone"></paper-icon-button>
-      </core-toolbar>
-
-      <!--add-->
-      <core-collapse id="collapse" allowOverflow>
-        <div id="addinterface">
-          <div id="centeradd" horizontal layout>
-            <div id="dropdowncontainer" self-end>
-              <paper-dropdown-menu label="Choose project">
-                <paper-dropdown class="dropdown">
-                  <core-menu class="menu" valueattr="label" id="projectchooser">
-                    <paper-item>Project1</paper-item>
-                    <paper-item>Project2</paper-item>
-                    <paper-item>Project3</paper-item>
-                    <paper-item>Project4</paper-item>
-                    <paper-item>Project5</paper-item>
-                    <paper-item>Project6</paper-item>
-                    <paper-item>Project7</paper-item>
-                  </core-menu>
-                </paper-dropdown>
-              </paper-dropdown-menu>
-            </div>
-            <div id="inputcontainer" flex self-end>
-              <paper-input-decorator label="New Task">
-                <input is="core-input" id="addbox" type="text">
-              </paper-input-decorator>
-            </div>
-            <div id="buttoncontainer" self-end>
-              <paper-button id="okbutton">
-                OK
-              </paper-button>
-            </div>
-          </div>
+        <paper-tabs selected="0" id="toptabs" class="bottom fit">
+          <paper-tab>
+            TASKS
+          </paper-tab>
+          <paper-tab>
+            COMPLETED
+          </paper-tab>
+        </paper-tabs>
+        <div id="cmcontainer" class="bottom">
+          <paper-dropdown-menu label="Choose project" class="bottom" id="choosermenu">
+            <paper-dropdown class="dropdown">
+              <core-menu class="menu" valueattr="label" id="projectchooser">
+                <paper-item>Project1</paper-item>
+                <paper-item>Project2</paper-item>
+                <paper-item>Project3</paper-item>
+                <paper-item>Project4</paper-item>
+                <paper-item>Project5</paper-item>
+                <paper-item>Project6</paper-item>
+                <paper-item>Project7</paper-item>
+              </core-menu>
+            </paper-dropdown>
+          </paper-dropdown-menu>
         </div>
-      </core-collapse>
+
+        <paper-input-decorator label="New Task" class="bottom" id="addboxdeco" flex>
+          <input is="core-input" id="addbox" type="text">
+        </paper-input-decorator>
+        <paper-icon-button icon="done" id="okbutton" class="bottom"></paper-icon-button>
+      </core-toolbar>
 
       <!--tasks-->
       <div id="tasks">
         <!--tasks here-->
       </div>
 
+      <!--for testing-->
       <div id="fortesting" style="height: 50px; background-color: red; width: 50px;"></div>
 
       <!--fab-->
