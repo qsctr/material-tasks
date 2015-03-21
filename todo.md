@@ -5,3 +5,5 @@
 - Delete tasks
 - Add animation for transition from tabs to new task
 - Update Polymer
+- Add due date
+- Add reminders
