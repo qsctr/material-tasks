@@ -4,6 +4,6 @@
 - Make tabs work
 - Delete tasks
 - Add animation for transition from tabs to new task
-- Update Polymer
 - Add due date
 - Add reminders
+- Delete multiple adding fab and make it add one
