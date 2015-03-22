@@ -1,3 +1,13 @@
+/* material colors:
+primary: Light Blue 200, 500 #03A9F4, 700
+accent: Lime 700 #AEEA00
+*/
+
+/*for ie snap*/
+@-ms-viewport{
+    width: device-width;
+}
+
 /*fonts*/
 body{
   font-family: 'Roboto', Arial;
@@ -13,11 +23,8 @@ h1{
   font-size: 30px;
   font-weight: 300;
 }
-.toolbar{
-  color: white;
-}
 #projectchooser paper-item{
-  color: black;
+  color: rgba(0, 0, 0, 0.87);
 }
 #cmcontainer{
   margin-left: 10vw;
@@ -30,13 +37,52 @@ h1{
 #okbutton{
   margin-right: 10vw;
 }
+/*toolbar input*/
+core-toolbar paper-input-decorator[focused] /deep/ .floating-label .label-text {
+  /*focused*/
+  color: #AEEA00;
+}
+core-toolbar paper-input-decorator /deep/ .focused-underline {
+  /*focused*/
+  background-color: #AEEA00;
+}
+/*tab color*/
+core-toolbar paper-tab::shadow #ink {
+  color: #AEEA00;
+}
+paper-tabs::shadow #selectionBar {
+  background-color: #AEEA00;
+}
 
 /*fab*/
 paper-fab{
   position: fixed;
   right: 32px;
   bottom: 32px;
-  background-color: #03A9F4;
+  background-color: #AEEA00;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+/*color for all inputs*/
+paper-input-decorator /deep/ .label-text, paper-input-decorator /deep/ .error {
+  /*unfocused*/
+  color: rgba(0, 0, 0, 0.54);
+}
+paper-input-decorator /deep/ ::-webkit-input-placeholder {
+  /*placeholder*/
+  color: rgba(0, 0, 0, 0.26);
+}
+paper-input-decorator /deep/ ::-moz-placeholder {
+  /*placeholder*/
+  color: rgba(0, 0, 0, 0.26);
+}
+paper-input-decorator /deep/ :-ms-input-placeholder {
+  /*placeholder*/
+  color: rgba(0, 0, 0, 0.26);
+}
+paper-input-decorator /deep/ .unfocused-underline {
+  /*unfocused*/
+  background-color: rgba(0, 0, 0, 0.54);
 }
 
 /*tasks*/
@@ -45,8 +91,17 @@ paper-fab{
   margin-left: auto;
   margin-right: auto;
 }
+#tasks paper-input-decorator[focused] /deep/ .floating-label .label-text {
+  /*focused*/
+  color: #AEEA00;
+}
+#tasks paper-input-decorator /deep/ .focused-underline {
+  /*focused*/
+  background-color: #AEEA00;
+}
 #tasks input{
   font-size: 18px;
+  color: rgba(0, 0, 0, 0.87);
 }
 .taskbox{
   width: 80vw;
@@ -56,4 +111,18 @@ paper-fab{
 }
 #tasks paper-checkbox{
   margin-right: 20px;
+}
+/*checkbox colors*/
+paper-checkbox::shadow #ink[checked] {
+  color: #AEEA00;
+}
+paper-checkbox::shadow #checkbox.checked {
+  background-color: #AEEA00;
+  border-color: #AEEA00;
+}
+paper-checkbox::shadow #ink {
+  color: rgba(0, 0, 0, 0.25);
+}
+paper-checkbox::shadow #checkbox {
+  border-color: rgba(0, 0, 0, 0.54);
 }
