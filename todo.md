@@ -7,3 +7,4 @@
 - Add due date
 - Add reminders
 - Delete multiple adding fab and make it add one
+- Add more high-res icon
