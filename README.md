@@ -15,7 +15,7 @@ There is currently no way to delete/complete tasks. The checkbox doesn't do
 anything. The tabs don't work. There is a temporary red square for testing,
 click that to clear all the local storage, then reload, and all tasks will be gone.
 
-Again, this is unfinished, so here are the things that work:
+Here are the things that work:
 
 - Editing existing tasks
 
@@ -27,7 +27,7 @@ Here are the things that do not work:
 
 - The tabs
 
-- Adding new tasks through the FAB (only logs to console for now)
+- The floating action button
 
 - Renaming projects (now they are named project 1, project 2, project 3, etc.)
 
