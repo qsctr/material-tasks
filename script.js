@@ -114,12 +114,14 @@ window.addEventListener("polymer-ready", function(){
   }
 
   //when coreadd button is clicked, start interactive adding dialog
+  /*
   document.querySelector("#coreadd").addEventListener("click", function(){
     addprocess("P1");
     addprocess("P2");
     addprocess("P3");
     addprocess("P4");
   });
+  */
 
   //when add button is clicked
   var open = 1;
