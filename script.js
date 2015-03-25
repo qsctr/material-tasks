@@ -1,22 +1,23 @@
+//TEMPLATE VARIABLES
+var template = document.querySelector("#template");
+template.page = "0";
+
 //FUNCTIONS
 
-//create convenient tasks variable
-var tasks = document.querySelector("#tasks");
-
-//function for fab adding
+//fab adding
 var addprocess = function(project){
   var number = prompt("Number of "+project+" tasks today: (integer)");
     var askloop = 0;
     while(askloop<number){
-      askloop++
+      askloop++;
       var task = prompt(project+" task #"+askloop+":");
       //replace with insert later
       console.log(project+askloop+task);
       //log tasks
     }
-}
+};
 
-//function for showing adding menus and hiding tabs
+//show adding menus, hide tabs
 var showadd = function(){
   document.querySelector("#bigheader").innerHTML = "Add new task";
   document.querySelector("#addone").setAttribute("icon", "clear");
@@ -24,9 +25,9 @@ var showadd = function(){
   document.querySelector("#cmcontainer").style.display = "inline-block";
   document.querySelector("#addboxdeco").style.display = "inline-block";
   document.querySelector("#okbutton").style.display = "inline-block";
-}
+};
 
-//show tabs and hide adding menus
+//show tabs, hide adding menus
 var hideadd = function(){
   document.querySelector("#bigheader").innerHTML = "Material Tasks";
   document.querySelector("#addone").setAttribute("icon", "add");
@@ -34,19 +35,19 @@ var hideadd = function(){
   document.querySelector("#cmcontainer").style.display = "none";
   document.querySelector("#addboxdeco").style.display = "none";
   document.querySelector("#okbutton").style.display = "none";
-}
+};
 
-//function for resetting adding menus
+//reset adding menus
 var resetadd = function(){
-  document.querySelector("#projectchooser").setAttribute("selected", "0")
+  document.querySelector("#projectchooser").setAttribute("selected", "0");
   document.querySelector("#projectchooser").setAttribute("selected", "null");
   document.querySelector("#addbox").value = "";
-}
+};
 
-//function for saving tasks
+//save tasks
 var save = function(){
   var total = document.querySelectorAll("#tasks input").length;
-  var count = 0
+  var count = 0;
   while(count < total){
     var saveinput = function(number){
       //save value of input
@@ -56,7 +57,7 @@ var save = function(){
         var note = this.value;
         localStorage.setItem(number, note);
       });
-    }
+    }; /*ok*/
     saveinput(count);
 
     //save project name
@@ -64,17 +65,16 @@ var save = function(){
     var projectofcount = document.querySelectorAll("#tasks input")[count].className;
     localStorage.setItem(countproject, projectofcount);
 
-    count++
+    count++;
   }
   //save total number of tasks
   localStorage.setItem("total", total);
-}
+};
 
 //MAIN SCRIPT
 
-//wait for page and polymer to load
-window.addEventListener("polymer-ready", function(){
-
+//wait for template binding
+window.addEventListener("template-bound", function(){
 
   //show tabs only
   hideadd();
@@ -86,7 +86,7 @@ window.addEventListener("polymer-ready", function(){
     var oldvalue = localStorage.getItem(count2);
 
     var countproject2 = count2 + "project";
-    var oldproject = localStorage.getItem(countproject2)
+    var oldproject = localStorage.getItem(countproject2);
 
     //add to task list
     var adddiv = document.createElement("div");
@@ -108,9 +108,9 @@ window.addEventListener("polymer-ready", function(){
     adddecor.appendChild(addinput);
     adddiv.appendChild(addcheck);
     adddiv.appendChild(adddecor);
-    tasks.appendChild(adddiv);
+    document.querySelector("#tasks").appendChild(adddiv);
 
-    count2++
+    count2++;
   }
 
   //when coreadd button is clicked, start interactive adding dialog
@@ -126,7 +126,7 @@ window.addEventListener("polymer-ready", function(){
   //when add button is clicked
   var open = 1;
   document.querySelector("#addone").addEventListener("click", function(){
-    open++
+    open++;
     if(open % 2 === 0){ //if action is open//
       showadd();
     }
@@ -162,6 +162,7 @@ window.addEventListener("polymer-ready", function(){
     adddecor.appendChild(addinput);
     adddiv.appendChild(addcheck);
     adddiv.appendChild(adddecor);
+    var tasks = document.querySelector("#tasks");
     tasks.insertBefore(adddiv, tasks.childNodes[0]);
 
     //reset dropdown and input

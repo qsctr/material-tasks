@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#03A9F4">
+    <meta name="theme-color" content="#0288D1">
 
     <!--web components polyfills-->
     <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
@@ -28,58 +28,71 @@
 
   </head>
   <body fullbleed unresolved layout vertical>
-    <core-header-panel flex id="chp">
-
-      <!--toolbar-->
-      <core-toolbar class="medium-tall">
-        <h1 id="bigheader">
-          Material Tasks
-        </h1>
-        <div flex></div>
-        <paper-icon-button icon="add" class="toolbar" id="addone"></paper-icon-button>
-        <paper-tabs selected="0" id="toptabs" class="bottom fit">
-          <paper-tab>
-            TASKS
-          </paper-tab>
-          <paper-tab>
-            COMPLETED
-          </paper-tab>
-        </paper-tabs>
-        <div id="cmcontainer" class="bottom">
-          <paper-dropdown-menu label="Choose project" class="bottom" id="choosermenu">
-            <paper-dropdown class="dropdown">
-              <core-menu class="menu" valueattr="label" id="projectchooser">
-                <paper-item>Project1</paper-item>
-                <paper-item>Project2</paper-item>
-                <paper-item>Project3</paper-item>
-                <paper-item>Project4</paper-item>
-                <paper-item>Project5</paper-item>
-                <paper-item>Project6</paper-item>
-                <paper-item>Project7</paper-item>
-              </core-menu>
-            </paper-dropdown>
-          </paper-dropdown-menu>
-        </div>
-
-        <paper-input-decorator label="New Task" class="bottom" id="addboxdeco" flex>
-          <input is="core-input" id="addbox" type="text">
-        </paper-input-decorator>
-        <paper-icon-button icon="done" id="okbutton" class="bottom"></paper-icon-button>
-      </core-toolbar>
-
-      <!--fab-->
-      <paper-fab icon="av:playlist-add" id="coreadd"></paper-fab>
-
-      <!--tasks-->
-      <div id="tasks">
-        <!--tasks here-->
-      </div>
-
-      <!--for testing-->
-      <div id="fortesting" style="height: 50px; background-color: red; width: 50px;"></div>
-
-    </core-header-panel>
-
+    <template is="auto-binding" id="template">
+      
+      <core-header-panel flex id="chp">
+        
+        <core-toolbar class="medium-tall">
+          
+          <h1 id="bigheader">
+            Material Tasks
+          </h1>
+          
+          <div flex></div>
+          
+          <paper-icon-button icon="add" class="toolbar" id="addone"></paper-icon-button>
+          
+          <paper-tabs selected="{{page}}" id="toptabs" class="bottom fit">
+            <paper-tab>
+              TASKS
+            </paper-tab>
+            <paper-tab>
+              COMPLETED
+            </paper-tab>
+          </paper-tabs>
+          
+          <div id="cmcontainer" class="bottom">
+            <paper-dropdown-menu label="Choose project" class="bottom" id="choosermenu">
+              <paper-dropdown class="dropdown">
+                <core-menu class="menu" valueattr="label" id="projectchooser">
+                  <paper-item>Project1</paper-item>
+                  <paper-item>Project2</paper-item>
+                  <paper-item>Project3</paper-item>
+                  <paper-item>Project4</paper-item>
+                  <paper-item>Project5</paper-item>
+                  <paper-item>Project6</paper-item>
+                  <paper-item>Project7</paper-item>
+                </core-menu>
+              </paper-dropdown>
+            </paper-dropdown-menu>
+          </div>
+  
+          <paper-input-decorator label="New Task" class="bottom" id="addboxdeco" flex>
+            <input is="core-input" id="addbox" type="text">
+          </paper-input-decorator>
+          <paper-icon-button icon="done" id="okbutton" class="bottom"></paper-icon-button>
+        </core-toolbar>
+  
+        <paper-fab icon="av:playlist-add" id="coreadd"></paper-fab>
+  
+        <core-pages selected="{{page}}">
+          
+          <div id="tasks">
+            <!--tasks here-->
+          </div>
+          
+          <div>
+            <!--completed tasks-->
+          </div>
+          
+        </core-pages>
+      
+        <!--for testing-->
+        <div id="fortesting" style="height: 50px; background-color: red; width: 50px;"></div>
+  
+      </core-header-panel>
+    </template>
+    
     <!--script-->
     <script src="script.js"></script>
 
